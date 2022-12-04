@@ -22,7 +22,7 @@ class LoadBalancer:
                 nat_p = packet["IPv6"].copy()
                 nat_p["IPv6"].src = self.host_ip
                 send(nat_p)
-                subprocess.run(self.DNAT_TUN.format(source=source ,host_ip=self.host_ip, ha_ip=addr).split())
+                subprocess.run(self.DNAT_TUN.format(source=source, host_ip=self.host_ip, ha_ip=addr).split())
             if MIP6MH_BU in packet and packet["IPv6"].dst == self.host_ip:
                 nat_p = packet["IPv6"].copy()
                 nat_p["IPv6"].dst = self.ha_ips[self.counter % len(self.ha_ips)]
