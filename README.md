@@ -1,5 +1,5 @@
 # mobility-loadbalancer
-A working L3 loadbalancer for Kubernetes using kindnetd.
+A working L3 loadbalancer for a Kubernetes cluster using kindnetd as CNI plugin.
 
 ## Description
 Deployable via a Pod whose hostNetwork option is set to true. You may build your own image using the provided Dockerfile. But you also have the option to deploy a ready built image found at kismi/lb:latest on DockerHub.
